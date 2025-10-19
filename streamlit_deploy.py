@@ -330,6 +330,32 @@ st.markdown("""
         border: 1px solid #7d95b1;
     }
     
+    /* AngaTech Logo Styling */
+    .logo-container {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        background: rgba(202, 213, 221, 0.05);
+        border-radius: 10px;
+        border: 1px solid #7d95b1;
+    }
+    
+    .logo {
+        max-height: 60px;
+        width: auto;
+        margin-bottom: 0.5rem;
+        filter: drop-shadow(0 0 8px rgba(125, 149, 177, 0.3));
+    }
+    
+    .company-branding {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.9rem;
+        color: #7d95b1;
+        margin-top: 0.5rem;
+        font-style: italic;
+        font-weight: 500;
+    }
+    
     @keyframes blink {
         0%, 50% { opacity: 1; }
         51%, 100% { opacity: 0; }
@@ -518,6 +544,20 @@ st.markdown("""
     &nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-keyword">return</span> <span class="syntax-string">prediction</span> <span class="syntax-comment">|</span>
 </div>
 """, unsafe_allow_html=True)
+
+# AngaTech Logo and Branding
+import base64
+
+def get_base64_image(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
+st.markdown("""
+<div class="logo-container">
+    <img src="data:image/png;base64,{}" alt="AngaTech Logo" class="logo">
+    <div class="company-branding">Powered by AngaTech - Innovative Technology Solutions</div>
+</div>
+""".format(get_base64_image('angatech-high-resolution-logo.png')), unsafe_allow_html=True)
 
 # Main header
 st.markdown('<h1 class="main-header">Bank Marketing Predictor</h1>', unsafe_allow_html=True)
@@ -958,3 +998,5 @@ st.markdown("""
     <p style="color: #cad5dd; margin: 0; font-family: 'Inter', sans-serif; font-weight: 500;">Enterprise-grade machine learning for banking</p>
 </div>
 """, unsafe_allow_html=True)
+
+

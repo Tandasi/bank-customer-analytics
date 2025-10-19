@@ -177,9 +177,25 @@ def convert_notebook_to_html():
             border: 2px solid #00ffff !important;
         }
         
-        .navigation {
+        .logo-container {
             text-align: center;
-            margin: 2rem 0;
+            margin-bottom: 2rem;
+            padding: 1rem;
+        }
+        
+        .logo {
+            max-height: 80px;
+            width: auto;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.3));
+        }
+        
+        .company-branding {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            color: #7d95b1;
+            margin-top: 0.5rem;
+            font-style: italic;
         }
         
         .nav-button {
@@ -249,6 +265,11 @@ def convert_notebook_to_html():
         <body>
             <div class="retro-grid"></div>
             <div class="container">
+                <div class="logo-container">
+                    <img src="angatech-high-resolution-logo.png" alt="AngaTech Logo" class="logo">
+                    <div class="company-branding">Powered by AngaTech - Innovative Technology Solutions</div>
+                </div>
+                
                 <h1 class="glitch">Bank Marketing Predictor</h1>
                 <h2>Machine Learning Pipeline</h2>
                 
