@@ -310,6 +310,8 @@ def convert_notebook_to_html():
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Bank Marketing Predictor - ML Pipeline</title>
+            <link rel="icon" type="image/png" href="angatech-high-resolution-logo.png">
+            <link rel="shortcut icon" type="image/png" href="angatech-high-resolution-logo.png">
             {custom_css}
         </head>
         <body>
@@ -326,7 +328,7 @@ def convert_notebook_to_html():
                 </div>
                 
                 <div class="navigation">
-                    <a href="streamlit_deploy.py" class="nav-button" target="_blank">Launch Streamlit App</a>
+                    <a href="https://bank-customer-analytics.streamlit.app/" class="nav-button" target="_blank">Launch Streamlit App</a>
                     <a href="data/bank_marketing_complete.csv" class="nav-button" download>Download Dataset</a>
                     <a href="bank_marketing_complete.ipynb" class="nav-button" download>Download Notebook</a>
                 </div>

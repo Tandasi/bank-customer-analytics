@@ -19,7 +19,8 @@ from plotly.subplots import make_subplots
 
 # Page configuration for HTTPS deployment
 st.set_page_config(
-    page_title="Bank Marketing Predictor - HTTPS",
+    page_title="Bank Marketing Predictor - AngaTech",
+    page_icon="angatech-high-resolution-logo.png",
     layout="wide",
     initial_sidebar_state="expanded"
 )
