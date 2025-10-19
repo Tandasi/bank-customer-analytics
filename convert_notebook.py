@@ -197,28 +197,38 @@ def convert_notebook_to_html():
             font-style: italic;
         }
         
+        .navigation {
+            text-align: center;
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
         .nav-button {
             display: inline-block;
-            background: linear-gradient(45deg, #ff00ff, #00ffff);
-            color: #000000;
+            background: linear-gradient(135deg, #0c1f24, #143753);
+            color: #cad5dd;
             padding: 12px 24px;
-            margin: 0 10px;
+            margin: 0 5px;
             text-decoration: none;
             border-radius: 8px;
-            border: 2px solid #ffff00;
+            border: 1px solid #7d95b1;
             font-family: 'Rajdhani', sans-serif;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         
         .nav-button:hover {
-            background: linear-gradient(45deg, #00ffff, #ff00ff);
-            border-color: #00ff00;
+            background: linear-gradient(135deg, #143753, #1c5181);
+            border-color: #cad5dd;
             transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         
         /* Retro Grid Background */
