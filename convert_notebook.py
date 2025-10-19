@@ -32,9 +32,9 @@ def convert_notebook_to_html():
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&display=swap');
         
         body {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            background: linear-gradient(135deg, #0c1f24 0%, #143753 50%, #1c5181 100%);
             background-attachment: fixed;
-            color: #00ffff;
+            color: #cad5dd;
             font-family: 'Rajdhani', sans-serif;
             margin: 0;
             padding: 20px;
@@ -44,90 +44,89 @@ def convert_notebook_to_html():
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(202, 213, 221, 0.1);
             border-radius: 20px;
             padding: 30px;
             backdrop-filter: blur(10px);
-            border: 2px solid #00ffff;
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+            border: 2px solid #7d95b1;
+            box-shadow: 0 0 30px rgba(125, 149, 177, 0.3);
         }
         
         h1 {
             font-family: 'Rajdhani', sans-serif;
             font-size: 2.5rem;
             font-weight: 600;
-            color: #00ffff;
+            color: #cad5dd;
             text-align: center;
             margin-bottom: 1rem;
             letter-spacing: 0.05em;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+            text-shadow: 0 0 10px rgba(202, 213, 221, 0.3);
         }
         
         h2 {
             font-family: 'Rajdhani', sans-serif;
             font-size: 1.4rem;
             font-weight: 500;
-            color: #ff00ff;
+            color: #7d95b1;
             text-align: center;
             margin: 0 0 2rem 0;
             letter-spacing: 0.1em;
-            text-shadow: 0 0 5px rgba(255, 0, 255, 0.3);
+            text-shadow: 0 0 5px rgba(125, 149, 177, 0.3);
         }
         
         h3 {
             font-family: 'Rajdhani', sans-serif;
             font-size: 1.5rem;
             font-weight: 600;
-            color: #ff00ff;
+            color: #7d95b1;
             margin: 1.5rem 0 0.5rem 0;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
         
         .cell {
-            background: linear-gradient(145deg, rgba(0, 0, 0, 0.8), rgba(26, 26, 46, 0.9));
-            border: 2px solid #00ffff;
-            border-radius: 15px;
+            background: rgba(202, 213, 221, 0.05);
+            border: 1px solid #7d95b1;
+            border-radius: 10px;
             margin: 1rem 0;
             padding: 1rem;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 4px rgba(125, 149, 177, 0.2);
         }
         
         .input {
-            background: rgba(0, 0, 0, 0.9);
-            border: 2px solid #ff00ff;
+            background: rgba(12, 31, 36, 0.9);
+            border: 1px solid #1c5181;
             border-radius: 8px;
             padding: 1rem;
             margin: 0.5rem 0;
-            color: #00ffff;
+            color: #cad5dd;
         }
         
         .output {
-            background: rgba(26, 26, 46, 0.9);
-            border: 2px solid #ffff00;
+            background: rgba(20, 55, 83, 0.8);
+            border: 1px solid #7d95b1;
             border-radius: 8px;
             padding: 1rem;
             margin: 0.5rem 0;
-            color: #ffffff;
+            color: #cad5dd;
         }
         
         pre {
-            background: rgba(0, 0, 0, 0.9);
-            border: 2px solid #00ffff;
+            background: rgba(12, 31, 36, 0.9);
+            border: 1px solid #1c5181;
             border-radius: 8px;
             padding: 1rem;
-            color: #00ff00;
-            font-family: 'Press Start 2P', monospace;
+            color: #cad5dd;
+            font-family: 'JetBrains Mono', monospace;
             overflow-x: auto;
         }
         
         code {
-            background: rgba(0, 0, 0, 0.8);
-            color: #00ff00;
+            background: rgba(20, 55, 83, 0.8);
+            color: #cad5dd;
             padding: 0.2rem 0.4rem;
             border-radius: 4px;
-            font-family: 'Press Start 2P', monospace;
+            font-family: 'JetBrains Mono', monospace;
         }
         
         table {
