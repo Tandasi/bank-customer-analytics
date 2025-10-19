@@ -47,6 +47,8 @@ This project analyzes bank marketing data to predict whether customers will subs
 ### 🌐 View Online (Recommended)
 **Live HTML Notebook**: [https://tandasi.github.io/bank-customer-analytics/bank_marketing_http.html](https://tandasi.github.io/bank-customer-analytics/bank_marketing_http.html)
 
+**Interactive Streamlit App**: [https://bank-customer-analytics.streamlit.app/](https://bank-customer-analytics.streamlit.app/)
+
 ### Run the Streamlit App
 ```bash
 streamlit run streamlit_deploy.py
