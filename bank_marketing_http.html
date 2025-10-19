@@ -7,151 +7,189 @@
             <title>Bank Marketing Predictor - ML Pipeline</title>
             
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
         body {
-            background: linear-gradient(135deg, #0c1f24 0%, #143753 50%, #1c5181 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
             background-attachment: fixed;
-            color: #cad5dd;
-            font-family: 'Rajdhani', sans-serif;
+            color: #f1f5f9;
+            font-family: 'Inter', sans-serif;
             margin: 0;
-            padding: 20px;
-            line-height: 1.6;
+            padding: 0;
+            line-height: 1.7;
+            min-height: 100vh;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            background: rgba(202, 213, 221, 0.1);
-            border-radius: 20px;
-            padding: 30px;
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 24px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-container {
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+        }
+        
+        .company-branding {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+        }
+        
+        .header-container {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 16px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
             backdrop-filter: blur(10px);
-            border: 2px solid #7d95b1;
-            box-shadow: 0 0 30px rgba(125, 149, 177, 0.3);
         }
         
         h1 {
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #cad5dd;
+            font-family: 'Inter', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #f8fafc;
             text-align: center;
             margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-            text-shadow: 0 0 10px rgba(202, 213, 221, 0.3);
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         h2 {
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1.4rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
             font-weight: 500;
-            color: #7d95b1;
+            color: #94a3b8;
             text-align: center;
-            margin: 0 0 2rem 0;
-            letter-spacing: 0.1em;
-            text-shadow: 0 0 5px rgba(125, 149, 177, 0.3);
-        }
-        
-        h3 {
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #7d95b1;
-            margin: 1.5rem 0 0.5rem 0;
-            text-transform: uppercase;
+            margin: 0;
             letter-spacing: 0.05em;
         }
         
-        .cell {
-            background: rgba(202, 213, 221, 0.05);
-            border: 1px solid #7d95b1;
-            border-radius: 10px;
-            margin: 1rem 0;
-            padding: 1rem;
-            box-shadow: 0 2px 4px rgba(125, 149, 177, 0.2);
-        }
-        
-        .input {
-            background: rgba(12, 31, 36, 0.9);
-            border: 1px solid #1c5181;
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 0.5rem 0;
-            color: #cad5dd;
-        }
-        
-        .output {
-            background: rgba(20, 55, 83, 0.8);
-            border: 1px solid #7d95b1;
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 0.5rem 0;
-            color: #cad5dd;
-        }
-        
-        pre {
-            background: rgba(12, 31, 36, 0.9);
-            border: 1px solid #1c5181;
-            border-radius: 8px;
-            padding: 1rem;
-            color: #cad5dd;
-            font-family: 'JetBrains Mono', monospace;
-            overflow-x: auto;
-        }
-        
-        code {
-            background: rgba(20, 55, 83, 0.8);
-            color: #cad5dd;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        
-        table {
-            background: rgba(0, 0, 0, 0.8);
-            border: 2px solid #00ffff;
-            border-radius: 8px;
-            color: #ffffff;
-            margin: 1rem 0;
-        }
-        
-        th {
-            background: rgba(0, 255, 255, 0.3);
-            color: #000000;
-            padding: 0.5rem;
-            border-bottom: 2px solid #00ffff;
-            font-family: 'Rajdhani', sans-serif;
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
             font-weight: 600;
-            text-transform: uppercase;
-        }
-        
-        td {
-            padding: 0.5rem;
-            border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+            color: #e2e8f0;
+            margin: 2rem 0 1rem 0;
+            text-transform: none;
+            letter-spacing: -0.01em;
         }
         
         p, li, div, .text_cell_render, .markdown_text, * {
-            color: #00ffff !important;
+            color: #cbd5e1 !important;
+        }
+        
+        .cell {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 12px;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .input {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #f1f5f9;
+        }
+        
+        .output {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #f1f5f9;
         }
         
         pre, code, .highlight, .highlight * {
-            color: #00ff00 !important;
-            background: rgba(0, 0, 0, 0.9) !important;
+            color: #f1f5f9 !important;
+            background: rgba(15, 23, 42, 0.9) !important;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        pre {
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        code {
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
         }
         
         table, table *, td, th {
-            color: #ffffff !important;
-            background: rgba(0, 0, 0, 0.8) !important;
+            color: #f1f5f9 !important;
+            background: rgba(30, 41, 59, 0.6) !important;
+        }
+        
+        table {
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
         }
         
         th {
-            background: rgba(0, 255, 255, 0.3) !important;
-            color: #000000 !important;
+            background: rgba(15, 23, 42, 0.8) !important;
+            color: #e2e8f0 !important;
+            padding: 1rem;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
         }
         
         .jp-Cell-inputWrapper, .jp-Cell-outputWrapper, .jp-InputArea, .jp-OutputArea {
-            background: rgba(0, 0, 0, 0.8) !important;
-            border: 2px solid #00ffff !important;
+            background: rgba(30, 41, 59, 0.4) !important;
+            border: 1px solid rgba(148, 163, 184, 0.1) !important;
+            border-radius: 8px;
         }
         
         .header-container {
@@ -180,37 +218,36 @@
         }
         
         .navigation {
-            text-align: center;
-            margin: 2rem 0;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
+            margin: 3rem 0;
         }
         
         .nav-button {
             display: inline-block;
-            background: linear-gradient(135deg, #0c1f24, #143753);
-            color: #cad5dd;
-            padding: 12px 24px;
-            margin: 0 5px;
+            background: linear-gradient(135deg, #1e293b, #334155);
+            color: #f8fafc;
+            padding: 14px 28px;
+            margin: 0;
             text-decoration: none;
-            border-radius: 8px;
-            border: 1px solid #7d95b1;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            border-radius: 12px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            text-transform: none;
+            letter-spacing: 0.02em;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         
         .nav-button:hover {
-            background: linear-gradient(135deg, #143753, #1c5181);
-            border-color: #cad5dd;
+            background: linear-gradient(135deg, #334155, #475569);
+            border-color: rgba(148, 163, 184, 0.5);
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
         }
         
         /* Retro Grid Background */
@@ -7776,7 +7813,7 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e4298f4b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=968289dc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7788,7 +7825,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e3b79bf6">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4b1b4a86">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7859,7 +7896,7 @@ Ready to start Bank Marketing Predictor project...
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6204e1a1">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=46654d8c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7907,7 +7944,7 @@ Target: ['y']
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0f309c2e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=010bd818">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8000,7 +8037,7 @@ Missing values after cleaning: 0
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8eee3376">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=22521de8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8087,7 +8124,7 @@ Subscription rate: 11.7%
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e71a0d6f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=033a89a6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8180,7 +8217,7 @@ Name: age, dtype: float64
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d9bfe66b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8f13ad0e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8286,7 +8323,7 @@ Name: y, dtype: float64
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6292a7c0">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a240c09d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8407,7 +8444,7 @@ Name: balance, dtype: float64
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4df7b326">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d3163c70">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8526,7 +8563,7 @@ Name: duration, dtype: float64
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7de7aa79">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2004e46d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8631,7 +8668,7 @@ dtype: float64
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0dcc331a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cf724572">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8711,7 +8748,7 @@ Feature names: 38
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7ed3c134">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5a86b418">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8768,7 +8805,7 @@ Test target distribution: [7985 1058]
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8f24a494">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=17b7b488">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8966,7 +9003,7 @@ Model training completed successfully!
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8034e6b2">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d7c19673">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9033,7 +9070,7 @@ Final test accuracy: 0.9056
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7ccb1df7">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=533a1b04">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9144,7 +9181,7 @@ Please ensure the model is properly trained and data is available.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ee952212">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=32d032af">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9295,7 +9332,7 @@ ROC-AUC: 0.9120
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7d0d1b0a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=87ddc513">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
