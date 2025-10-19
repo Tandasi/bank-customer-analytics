@@ -176,10 +176,14 @@ def convert_notebook_to_html():
             border: 2px solid #00ffff !important;
         }
         
-        .logo-container {
-            text-align: center;
+        .header-container {
+            background: rgba(202, 213, 221, 0.05);
+            border-radius: 10px;
+            border: 1px solid #7d95b1;
+            padding: 2rem;
             margin-bottom: 2rem;
-            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(125, 149, 177, 0.2);
         }
         
         .logo {
@@ -279,8 +283,10 @@ def convert_notebook_to_html():
                     <div class="company-branding">Powered by AngaTech - Innovative Technology Solutions</div>
                 </div>
                 
-                <h1 class="glitch">Bank Marketing Predictor</h1>
-                <h2>Machine Learning Pipeline</h2>
+                <div class="header-container">
+                    <h1 class="glitch">Bank Marketing Predictor</h1>
+                    <h2>Machine Learning Pipeline</h2>
+                </div>
                 
                 <div class="navigation">
                     <a href="streamlit_deploy.py" class="nav-button" target="_blank">Launch Streamlit App</a>
